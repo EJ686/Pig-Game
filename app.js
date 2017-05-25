@@ -11,7 +11,7 @@ GAME RULES:
 let scores, roundScore, activePlayer, gamePlaying;
 
 function init() {
-    scores = [0,0];
+    scores = [0, 0];
     roundScore = 0;
     activePlayer = 0;
     gamePlaying = true;
@@ -35,13 +35,14 @@ init();
 
 
 //Next player function
-function nextPlayer(){
+function nextPlayer() {
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
     roundScore = 0;
     document.getElementById("current-0").textContent = "0";
     document.getElementById("current-1").textContent = "0";
 
-    document.querySelector(".player-0-panel").classList.toggle("active"); document.querySelector(".player-1-panel").classList.toggle("active");
+    document.querySelector(".player-0-panel").classList.toggle("active");
+    document.querySelector(".player-1-panel").classList.toggle("active");
 
     document.querySelector(".dice").style.display = "none";
 }
@@ -70,7 +71,7 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
 
 });
 
-document.querySelector(".btn-hold").addEventListener("click", function(){
+document.querySelector(".btn-hold").addEventListener("click", function() {
     if (gamePlaying) {
         //Add current score to GLOBAL score
         scores[activePlayer] += roundScore;
@@ -92,4 +93,4 @@ document.querySelector(".btn-hold").addEventListener("click", function(){
 
 });
 
-document.querySelector(".btn-new").addEventListener("click",init);
+document.querySelector(".btn-new").addEventListener("click", init);
